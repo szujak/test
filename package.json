@@ -1,0 +1,106 @@
+{
+  "name": "my-app",
+  "version": "1.0.0",
+  "description": "My app",
+  "main": "src/server/index.js",
+  "scripts": {
+    "start": "babel-node src/index.js",
+    "start:dev": "webpack-dev-server --open --mode development",
+    "build": "webpack --mode production",
+    "build:dev": "webpack --mode development",
+    "test": "npm run test:eslint && npm run test:jest",
+    "test:jest": "jest",
+    "test:eslint": "eslint src --ext .js,.jsx",
+    "test:eslint:fix": "eslint src --ext .js,.jsx --fix"
+  },
+  "keywords": [],
+  "author": "Adam Szajuk <kontakt@adamszajuk.pl>",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-jest": "^23.4.2",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "eslint": "^5.4.0",
+    "eslint-plugin-jest": "^21.21.0",
+    "eslint-plugin-react": "^7.11.1",
+    "html-webpack-plugin": "^3.2.0",
+    "html-webpack-template-pug": "^1.1.1",
+    "jest": "^23.5.0",
+    "prop-types": "^15.6.2",
+    "pug-loader": "^2.4.0",
+    "react-test-renderer": "^16.4.2",
+    "regenerator-runtime": "^0.12.1",
+    "webpack": "^4.16.5",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.5"
+  },
+  "dependencies": {
+    "@material-ui/core": "^1.5.1",
+    "@material-ui/icons": "^2.0.3",
+    "dotenv": "^6.0.0",
+    "koa": "^2.5.2",
+    "koa-middlewares": "^6.0.0",
+    "koa-router": "^7.4.0",
+    "koa-views": "^6.1.4",
+    "pug": "^2.0.3",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-helmet": "^5.2.0",
+    "react-jss": "^8.6.1"
+  },
+  "jest": {
+    "testMatch": [
+      "**/tests/**/*.js?(x)",
+      "**/?(*.)+(spec|test).js?(x)"
+    ]
+  },
+  "babel": {
+    "presets": [
+      "env",
+      "react"
+    ],
+    "plugins": [
+      "transform-class-properties",
+      "transform-object-rest-spread",
+      "transform-es2015-modules-commonjs"
+    ]
+  },
+  "eslintConfig": {
+    "plugins": [
+      "jest",
+      "react"
+    ],
+    "extends": [
+      "eslint:recommended",
+      "plugin:jest/recommended",
+      "plugin:react/recommended"
+    ],
+    "settings": {
+      "react": {
+        "pragma": "React",
+        "version": "16.4.2",
+        "createClass": "createReactClass"
+      },
+      "propWrapperFunctions": [
+        "forbidExtraProps"
+      ]
+    },
+    "parserOptions": {
+      "ecmaVersion": 2018,
+      "sourceType": "module",
+      "ecmaFeatures": {
+        "jsx": true
+      }
+    },
+    "env": {
+      "node": true,
+      "browser": true,
+      "jest/globals": true
+    }
+  }
+}

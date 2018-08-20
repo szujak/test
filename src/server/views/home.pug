@@ -1,0 +1,8 @@
+doctype html
+html
+  head !{helmet.title.toString()} !{helmet.meta.toString()} !{helmet.link.toString()} !{helmet.style.toString()}
+  body
+    div#root !{reactDom}
+    div !{helmet.script.toString()}
+    style !{css}
+    script(src="bundle.js")

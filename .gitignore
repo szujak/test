@@ -1,0 +1,6 @@
+# Build files
+.env
+src/server/dist
+
+# Node
+node_modules
