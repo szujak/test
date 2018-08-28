@@ -48,7 +48,7 @@ class Server {
             if (NODE_ENV === 'test') {
                 return
             }
-        });
+        })
 
         // eslint-disable-next-line no-console
         server.listen(APP_PORT, () => console.log(`App is listening on port ${APP_PORT}`))
