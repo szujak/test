@@ -1,12 +1,14 @@
 import React from 'react'
+import { create } from 'jss'
 import { Helmet } from 'react-helmet'
 import { renderToString } from 'react-dom/server'
 
-import red from '@material-ui/core/colors/red'
-import green from '@material-ui/core/colors/green'
+import purple from '@material-ui/core/colors/purple'
+import orange from '@material-ui/core/colors/orange'
 import JssProvider from 'react-jss/lib/JssProvider'
 import { SheetsRegistry } from 'react-jss/lib/jss'
 import {
+    jssPreset,
     MuiThemeProvider,
     createMuiTheme,
     createGenerateClassName,
@@ -15,21 +17,31 @@ import {
 import { App } from '../../../app/containers'
 
 export default async function HomeController(ctx, next) {
+    // Create a sheetsRegistry instance.
+    const sheetsRegistry = new SheetsRegistry()
+
+    // Create a sheetsManager instance.
     // eslint-disable-next-line 
     const sheetsManager = new Map()
-    const sheetsRegistry = new SheetsRegistry()
-    const generateClassName = createGenerateClassName()
 
+    // Create a JSS instance with the default preset of plugins.
+    // It's optional.
+    const jss = create(jssPreset())
+
+    // Create a theme instance.
     const theme = createMuiTheme({
         palette: {
-            primary: green,
-            accent: red,
-            type: 'light',
+            primary: purple,
+            accent: orange,
+            type: 'dark',
         },
-    })
+    });
+
+    // Create a new class name generator.
+    const generateClassName = createGenerateClassName()
 
     const reactDom = renderToString(
-        <JssProvider registry={sheetsRegistry} generateClassName={generateClassName}>
+        <JssProvider jss={jss} registry={sheetsRegistry} generateClassName={generateClassName}>
             <MuiThemeProvider theme={theme} sheetsManager={sheetsManager}>
                 <App />
             </MuiThemeProvider>

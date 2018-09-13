@@ -3,6 +3,6 @@ html
   head !{helmet.title.toString()} !{helmet.meta.toString()} !{helmet.link.toString()} !{helmet.style.toString()}
   body
     div#root !{reactDom}
+    style#jss-server-side !{css}
     div !{helmet.script.toString()}
-    style !{css}
     script(src="bundle.js")
