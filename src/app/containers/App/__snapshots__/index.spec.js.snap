@@ -2,7 +2,7 @@
 
 exports[`renders correctly 1`] = `
 <button
-  className="MuiButtonBase-root-027 MuiButton-root-01 MuiButton-contained-012 MuiButton-containedPrimary-013 MuiButton-raised-015 MuiButton-raisedPrimary-016"
+  className="MuiButtonBase-root-27 MuiButton-root-1 MuiButton-contained-12 MuiButton-containedPrimary-13 MuiButton-raised-15 MuiButton-raisedPrimary-16"
   disabled={false}
   onBlur={[Function]}
   onFocus={[Function]}
@@ -18,12 +18,12 @@ exports[`renders correctly 1`] = `
   type="button"
 >
   <span
-    className="MuiButton-label-02"
+    className="MuiButton-label-2"
   >
     Test
   </span>
   <span
-    className="MuiTouchRipple-root-030"
+    className="MuiTouchRipple-root-30"
   />
 </button>
 `;
