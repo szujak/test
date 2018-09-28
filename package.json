@@ -12,7 +12,9 @@
     "test:jest": "jest",
     "test:jest:snapshot": "jest --updateSnapshot",
     "test:eslint": "eslint src --ext .js,.jsx",
-    "test:eslint:fix": "eslint src --ext .js,.jsx --fix"
+    "test:eslint:fix": "eslint src --ext .js,.jsx --fix",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "keywords": [],
   "author": "Adam Szajuk <kontakt@adamszajuk.pl>",
@@ -28,7 +30,7 @@
     "@babel/preset-react": "^7.0.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^23.6.0",
-    "babel-loader": "^8.0.2",
+    "babel-loader": "^8.0.4",
     "babel-plugin-styled-components": "^1.7.1",
     "eslint": "^5.6.0",
     "eslint-plugin-jest": "^21.22.1",
@@ -42,11 +44,14 @@
     "regenerator-runtime": "^0.12.1",
     "webpack": "^4.20.2",
     "webpack-cli": "^3.1.1",
-    "webpack-dev-server": "^3.1.9"
+    "webpack-dev-server": "^3.1.9",
+    "@storybook/react": "v4.0.0-alpha.23",
+    "@storybook/addon-actions": "v4.0.0-alpha.23",
+    "@storybook/addon-links": "v4.0.0-alpha.23",
+    "@storybook/addons": "v4.0.0-alpha.23",
+    "babel-runtime": "^6.26.0"
   },
   "dependencies": {
-    "@material-ui/core": "^3.1.1",
-    "@material-ui/icons": "^3.0.1",
     "dotenv": "^6.0.0",
     "koa": "^2.5.3",
     "koa-middlewares": "^6.0.0",
